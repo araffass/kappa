@@ -49,4 +49,25 @@ paths:
                 type: integer
           content:
             'application/json': {}
+  /arrayType/:
+    post:
+      operationId: op3
+      requestBody:
+        required: true
+        content:
+          'application/json':
+            schema:
+              type: object
+              properties:
+                nullableField:
+                  type:
+                    - string
+                    - 'null'
+              required:
+                - nullableField
+      responses:
+        '200':
+          description: a description
+          content:
+            'application/json': {}
 
