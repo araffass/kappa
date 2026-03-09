@@ -202,7 +202,7 @@ public class RequestValidatorTest {
 
     OpenApiValidationFailure bodyFailure = thrown.results().get(0);
     assertThat(bodyFailure.describeInstanceLocation(), startsWith("$request.body#/nullableField"));
-    assertEquals("expected type: [string, null], actual: integer", bodyFailure.getMessage());
+    assertEquals("expected type: one of string, null, actual: integer", bodyFailure.getMessage());
   }
 
   @Test
